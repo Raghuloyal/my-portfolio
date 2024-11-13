@@ -1,0 +1,136 @@
+.testimonials {
+    margin: 80px auto;
+    padding: 0 80px;
+    position: relative;
+}
+
+.next-btn, .back-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 15px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #242323;
+}
+
+.back-btn {
+    right: auto;
+    left: 0;
+}
+
+.slider {
+    overflow: hidden;
+}
+
+.slider ul {
+    display: flex;
+    width: 200%;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.slider ul li {
+    list-style: none;
+    width: 50%;
+    padding: 20px;
+}
+
+.slide {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    border-radius: 10px;
+    color: #676767;
+    line-height: 1.4;
+    /* Set fixed height and width */
+    width: 100%;
+    min-height: 300px; /* Ensure all slides are the same height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slide img {
+    width: 65px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 4px solid #6e6e6f;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.user-info h3 {
+    color: #242323;
+}
+
+/* media query */
+@media (max-width: 800px) {
+    .testimonials {
+        padding: 0 40px;
+    }
+
+    .next-btn, .back-btn {
+        padding: 10px;
+        width: 35px;
+    }
+
+    .testimonials ul li {
+        padding: 10px;
+    }
+
+    .slide {
+        padding: 20px;
+    }
+
+    .slide img {
+        width: 50px;
+        border: 3px solid #676767;
+    }
+}
+
+/* Show only one slide on screens smaller than 600px */
+@media (max-width: 600px) {
+    .slider ul {
+        width: calc(100% * 5); /* Adjust for the total number of slides */
+    }
+
+    .slider ul li {
+        width: 100%; /* Each slide takes up 100% of the width */
+    }
+}
+/* General Styles for .slider */
+
+
+/* Mobile view: enable horizontal scrolling */
+@media (max-width: 600px) {
+    .next-btn,
+    .back-btn {
+        display: none; /* Hide buttons on mobile */
+    }
+
+    .slider {
+        overflow-x: scroll; /* Enable horizontal scrolling */
+        scroll-snap-type: x mandatory; /* Optional: enables snapping to each slide */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    }
+
+    .slider ul {
+        display: flex;
+        width: calc(100% * 5); /* Adjust for the total number of slides */
+    }
+
+    .slider ul li {
+        width: 100%; /* Each slide takes up 100% of the width */
+        scroll-snap-align: center; /* Optional: snap each slide to center */
+    }
+}
+
+
+
